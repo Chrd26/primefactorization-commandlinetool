@@ -29,6 +29,7 @@ int main(int argc, char* argv[])
 
     // Since prime numbers cannot be 1 or less, 
     // Prime factorization is not possible for numbers that are one or less
+    // Source: https://www.mathsisfun.com/prime-factorization.html
     if (val <= 1)
     {
         LOG("Please use a number that is bigger than 1");
