@@ -3,11 +3,13 @@
 class factorize 
 {
 public:
-        int num;
+        // constructor
         factorize(double input);
-private:
+
         // functions
         int getValue();
+        void returnFactorization(int* values);
+private:
+        int num;
         bool isPrime();
-        int returnFactorization();
 };

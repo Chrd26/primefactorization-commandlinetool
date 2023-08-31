@@ -1,3 +1,4 @@
+#include <cstring>
 #include <iostream>
 #include "factorization.h"
 #define LOG(x) std::cout << x << std::endl
@@ -5,6 +6,8 @@
 int main(int argc, char* argv[])
 {
     double val = 0;
+    int* factors = new int[2];
+    std::memset(factors, 1, 1);
 
     // Make sure that the user is using the tool properly
     if (argc > 2){
@@ -37,5 +40,15 @@ int main(int argc, char* argv[])
 
     factorize factorize(val);
 
+    if (factorize.getValue() == -1)
+    {
+        LOG("You did not enter an integer number");
+        return 1;
+    }
+
+    factorize.returnFactorization(factors);
+
+    delete[] factors;
+    std::cin.get();
     return 0;
 }
