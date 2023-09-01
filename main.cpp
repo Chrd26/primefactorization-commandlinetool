@@ -1,13 +1,19 @@
 #include <cstring>
 #include <iostream>
 #include "factorization.h"
+#include <vector>
 #define LOG(x) std::cout << x << std::endl
 
 int main(int argc, char* argv[])
 {
     double val = 0;
-    int* factors = new int[2];
-    std::memset(factors, 1, 1);
+
+    // Insteads of allocating memory, use a vector
+    // Bjarne Stroustrup suggests to use vector for 
+    // dynamic memory allocation. A vector expands as needed.
+    // A vector is safer and easier to use than realloc()
+    // Source: https://www.stroustrup.com/bs_faq2.html#realloc
+    std::vector<int> factors;
 
     // Make sure that the user is using the tool properly
     if (argc > 2){
@@ -48,7 +54,6 @@ int main(int argc, char* argv[])
 
     factorize.returnFactorization(factors);
 
-    delete[] factors;
     std::cin.get();
     return 0;
 }

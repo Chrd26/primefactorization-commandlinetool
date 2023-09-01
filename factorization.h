@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 
 class factorize 
 {
@@ -8,7 +9,7 @@ public:
 
         // functions
         int getValue();
-        void returnFactorization(int* values);
+        void returnFactorization(std::vector<int> values);
 private:
         int num;
         bool isPrime();
