@@ -2,13 +2,6 @@
 #include <iostream>
 #include <cmath>
 #define LOG(x) std::cout << x << std::endl;
-    
-// Insteads of allocating memory, use a vector
-// Bjarne Stroustrup suggests to use vector for 
-// dynamic memory allocation. A vector expands as needed
-// A vector is safer and easier to use than realloc()
-// Source: https://www.stroustrup.com/bs_faq2.html#realloc
-
 
 factorize::factorize(double input)
 {
@@ -29,14 +22,13 @@ int factorize::getValue()
     return num;
 }
 
-bool factorize::isPrime()
+bool factorize::isPrime(int inputVal)
 {
     bool isPrime = false;
 
     for (int n = 2; n <= 10; n++){
-        // LOG(n);
-        double calc = num % n;
-        if (calc == 0 && n != num)
+        double calc = inputVal % n;
+        if (calc == 0 && n != inputVal)
         {
             std::cout << "return false" << std::endl;
             return false;
@@ -46,10 +38,33 @@ bool factorize::isPrime()
     return true;
 }
 
-
-void factorize::returnFactorization(std::vector<int> values)
+void factorize::process_factors(int value, std::vector<int>& values)
 {
-    bool checkForPrime = isPrime();
+    int newVal = 0;
+    LOG("Do something");
+
+    for (int i = 1; i <= 9; i++)
+    {
+        if (value % i == 0)
+        {
+            values.push_back(i);
+            newVal = value / i;
+        }
+
+        if (isPrime(newVal))
+        {
+            values.push_back(newVal);
+            return;
+        }
+
+        process_factors(newVal, values);
+    }
+}
+
+
+void factorize::factorization(std::vector<int>& values)
+{
+    bool checkForPrime = isPrime(num);
     values.push_back(1);
 
     if (checkForPrime)

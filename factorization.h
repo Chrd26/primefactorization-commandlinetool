@@ -9,8 +9,10 @@ public:
 
         // functions
         int getValue();
-        void returnFactorization(std::vector<int> values);
+        void factorization(std::vector<int>& values);
+
 private:
         int num;
-        bool isPrime();
+        bool isPrime(int num);
+        void process_factors(int value, std::vector<int>& values);
 };

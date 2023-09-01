@@ -1,7 +1,5 @@
-#include <cstring>
 #include <iostream>
 #include "factorization.h"
-#include <vector>
 #define LOG(x) std::cout << x << std::endl
 
 int main(int argc, char* argv[])
@@ -10,9 +8,10 @@ int main(int argc, char* argv[])
 
     // Insteads of allocating memory, use a vector
     // Bjarne Stroustrup suggests to use vector for 
-    // dynamic memory allocation. A vector expands as needed.
+    // dynamic memory allocation. A vector expands as needed
     // A vector is safer and easier to use than realloc()
     // Source: https://www.stroustrup.com/bs_faq2.html#realloc
+
     std::vector<int> factors;
 
     // Make sure that the user is using the tool properly
@@ -52,7 +51,7 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    factorize.returnFactorization(factors);
+    factorize.factorization(factors);
 
     std::cin.get();
     return 0;
