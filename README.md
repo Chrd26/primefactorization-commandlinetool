@@ -10,3 +10,13 @@ Download the repo and use the following command command:
 ```
 g++ -std=c++20 main.cpp factorization_helpers.cpp -o app
 ```
+
+This will create an executable binary named app. To run it, type ./app and then the number you would like to factorize.
+
+**Example**
+
+```
+./app 500
+```
+
+When the result appears, you will have to press enter to finish the executon of the app.
