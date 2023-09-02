@@ -12,7 +12,7 @@ public:
 
         // functions
         int getValue();
-        const void factorization(std::vector<int>& values);
+        void factorization(std::vector<int>& values);
 
 private:
         int num;

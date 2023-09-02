@@ -41,18 +41,16 @@ void factorize::process_factors(int value, std::vector<int>& values)
             newVal = value / i;
         }
 
-        if (isPrime(newVal))
-        {
+        if (isPrime(newVal)) {
             values.push_back(newVal);
             return;
         }
-
         process_factors(newVal, values);
     }
 }
 
 
-const void factorize::factorization(std::vector<int>& values)
+void factorize::factorization(std::vector<int>& values)
 {
     bool checkForPrime = isPrime(num);
     values.push_back(1);
@@ -76,4 +74,13 @@ const void factorize::factorization(std::vector<int>& values)
 
     std::cout << num << " is a composite number." << std::endl;
     process_factors(num, values);
+
+    std::cout << "The factors of " << num << " are: " << std::endl;
+
+    for (int value : values)
+    {
+        std::cout << value << " ";
+    }
+
+    std::cout << std::endl;
 }
