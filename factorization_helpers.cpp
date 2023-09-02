@@ -7,14 +7,7 @@ factorize::factorize(double input)
 {
     double isDecimal = std::fmod(input, 1.0);
 
-    if (isDecimal == 0)
-    {
-        num = input;
-    }
-    else
-    {
-        num = -1;
-    }
+    num = isDecimal == 0 ? input : -1;
 }
 
 int factorize::getValue()
@@ -24,8 +17,6 @@ int factorize::getValue()
 
 bool factorize::isPrime(int inputVal)
 {
-    bool isPrime = false;
-
     for (int n = 2; n <= 10; n++){
         double calc = inputVal % n;
         if (calc == 0 && n != inputVal)
@@ -41,7 +32,6 @@ bool factorize::isPrime(int inputVal)
 void factorize::process_factors(int value, std::vector<int>& values)
 {
     int newVal = 0;
-    LOG("Do something");
 
     for (int i = 1; i <= 9; i++)
     {
@@ -62,7 +52,7 @@ void factorize::process_factors(int value, std::vector<int>& values)
 }
 
 
-void factorize::factorization(std::vector<int>& values)
+const void factorize::factorization(std::vector<int>& values)
 {
     bool checkForPrime = isPrime(num);
     values.push_back(1);
@@ -72,13 +62,18 @@ void factorize::factorization(std::vector<int>& values)
         values.push_back(num);
 
         std::cout << "The factors of " << num << " are ";
-        for (int i = 0; i < values.size(); i++)
+        // Use range based loop
+        // This is similar to python's for item in array
+        // for value in values:
+        // Source for range based loops: https://en.cppreference.com/w/cpp/language/range-for
+        for (int value : values)
         {
-             std::cout << values[i] << " ";
+             std::cout << value << " ";
         }
 
         std::cout << "Because " << num << " is a prime number." << std::endl;
     }
 
     std::cout << num << " is a composite number." << std::endl;
+    process_factors(num, values);
 }

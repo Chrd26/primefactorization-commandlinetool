@@ -5,14 +5,17 @@ class factorize
 {
 public:
         // constructor
-        factorize(double input);
+        // Single argument constructors must be marked
+        // explicit to avoid unintentional implicit conversions
+        // Source: clion
+        explicit factorize(double input);
 
         // functions
         int getValue();
-        void factorization(std::vector<int>& values);
+        const void factorization(std::vector<int>& values);
 
 private:
         int num;
-        bool isPrime(int num);
+        static bool isPrime(int num);
         void process_factors(int value, std::vector<int>& values);
 };
