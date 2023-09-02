@@ -12,7 +12,6 @@ int main(int argc, char* argv[])
     // A vector is safer and easier to use than realloc()
     // Source: https://www.stroustrup.com/bs_faq2.html#realloc
 
-    std::vector<int> factors;
 
     // Make sure that the user is using the tool properly
     if (argc > 2){
@@ -51,7 +50,7 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    factorize.factorization(factors);
+    factorize.factorization();
 
     std::cin.get();
     return 0;

@@ -12,10 +12,11 @@ public:
 
         // functions
         int getValue();
-        void factorization(std::vector<int>& values);
+        void factorization();
 
 private:
         int num;
+        std::vector<int> factors;
         static bool isPrime(int num);
         void process_factors(int value, std::vector<int>& values);
 };
