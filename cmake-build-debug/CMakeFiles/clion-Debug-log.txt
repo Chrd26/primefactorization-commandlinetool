@@ -1,4 +1,0 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S "/Volumes/Projects/1. Development/1. Software Development/4. Applications/primefactorization-commandlinetool" -B "/Volumes/Projects/1. Development/1. Software Development/4. Applications/primefactorization-commandlinetool/cmake-build-debug"
--- Configuring done (0.1s)
--- Generating done (0.0s)
--- Build files have been written to: /Volumes/Projects/1. Development/1. Software Development/4. Applications/primefactorization-commandlinetool/cmake-build-debug
