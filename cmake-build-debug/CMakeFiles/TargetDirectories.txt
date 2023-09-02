@@ -1,0 +1,3 @@
+/Volumes/Projects/1. Development/1. Software Development/4. Applications/primefactorization-commandlinetool/cmake-build-debug/CMakeFiles/primefactorization_commandlinetool.dir
+/Volumes/Projects/1. Development/1. Software Development/4. Applications/primefactorization-commandlinetool/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Volumes/Projects/1. Development/1. Software Development/4. Applications/primefactorization-commandlinetool/cmake-build-debug/CMakeFiles/rebuild_cache.dir
