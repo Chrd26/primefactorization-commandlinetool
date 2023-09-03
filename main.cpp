@@ -32,6 +32,7 @@ int main(int argc, char* argv[])
     } catch (...) { 
         LOG("You did not enter an integer number");
         LOG("Example of proper use: ./app 100");
+        return 1;
     }
 
     // Since prime numbers cannot be 1 or less, 
@@ -40,6 +41,7 @@ int main(int argc, char* argv[])
     if (val <= 1)
     {
         LOG("Please use a number that is bigger than 1");
+        return 1;
     }
 
     factorize factorize(val);
